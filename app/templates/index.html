@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Skull King Scorekeeper Lite</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Skull King Scorekeeper (Lite)</h1>
+
+      <section class="card">
+        <h2>New game (overwrites current)</h2>
+        <div class="row">
+            <input id="name" placeholder="Game name" />
+            <select id="mode">
+                <option value="skull_king">Skull King scoring</option>
+                <option value="rascal">Rascal scoring</option>
+            </select>
+
+            <input id="rounds" type="number" min="1" step="1" placeholder="Rounds" style="width:110px;" />
+
+            <input id="players" placeholder="Players (comma separated)" />
+            <button id="newBtn">Start / Reset</button>
+        </div>
+        <div class="small">This app keeps only the current game. Starting a new game overwrites the previous one.</div>
+      </section>
+
+      <section class="card" id="entryCard">
+        <h2>Enter / Edit round</h2>
+        <div class="row">
+          <label class="small">Round:</label>
+          <select id="roundSelect"></select>
+          <button id="loadRoundBtn">Load</button>
+          <button id="saveRoundBtn">Save Round</button>
+          <span id="saveStatus" class="small"></span>
+        </div>
+
+        <div class="small" style="margin-top:8px;">
+          Bonus Override = total bonus points for that player in the round (e.g. 20 / 30 / 40 / 10/20 for 14s etc). Leave blank for 0.
+        </div>
+
+        <div id="entryTableWrap" style="margin-top:10px;"></div>
+
+        <div style="margin-top:14px;">
+          <div class="small"><b>Loot alliances (optional)</b> — one pair per line, format: <code>Alice,Bob</code></div>
+          <textarea id="alliances" rows="4" style="width:100%; margin-top:6px;"></textarea>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Scoreboard</h2>
+        <button id="refreshBtn">Refresh</button>
+        <button id="downloadJsonBtn">Download JSON</button>
+        <button id="downloadCsvBtn">Download CSV</button>
+        <div id="out"></div>
+      </section>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

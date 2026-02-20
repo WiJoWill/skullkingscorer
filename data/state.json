@@ -1,0 +1,12 @@
+{
+  "name": "Current Game",
+  "scoring_mode": "skull_king",
+  "rounds": 12,
+  "players": [
+    "1",
+    "2",
+    "3"
+  ],
+  "round_results": {},
+  "loot_alliances": {}
+}
